@@ -53,14 +53,12 @@ def drawLine(c, points, reso):
 		xarr.append(points[i][0])
 		yarr.append(points[i][1])	
 	
-	#Find minimum and maximum x and y
-	minx = min(xarr)
-	maxx = max(xarr)
-	miny = min(yarr)
-	maxy = max(yarr)
+	#Find minimum and maximum x
+	xmin = min(xarr)
+	xmax = max(xarr)
 
 	#Define x for model
-	x = np.arange(minx * 1.10, maxx * 1.10, reso)
+	x = np.arange(xmin * 1.10, xmax * 1.10, reso)
 
 	#Plot results
 	mpl.plot(x, c[1] * x + c[0], 'r--')
